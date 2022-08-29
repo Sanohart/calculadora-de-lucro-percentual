@@ -1,0 +1,24 @@
+<html>
+  <script>
+    let filiais = [
+      { Estado: 'SP', Lucro: 6783643 },
+      { Estado: 'RJ', Lucro: 3667866 },
+      { Estado: 'MG', Lucro: 2922988 },
+      { Estado: 'ES', Lucro: 2716548 },
+      { Estado: 'Outros', Lucro: 1984953 },
+    ];
+
+    //soma o lucro total
+    let sum = 0;
+    filiais.map(function (entry) {
+      sum = sum + entry.Lucro;
+    });
+
+    //calcula a porcentagem
+    filiais.map(function (entry) {
+      entry.Porcentagem = (entry.Lucro / sum) * 100;
+      console.log(entry.Estado + ' : ' + Math.round(entry.Porcentagem) + '%');
+      //console.table(entry);
+    });
+  </script>
+</html>
